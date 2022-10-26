@@ -17,13 +17,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (linkearComentarios.status === "ok") {
         comentarios = linkearComentarios.data;
         mostarComentarios();
-        
+
     }
 
 });
 
 
-
+// funcion para mostrar info del producto consumido de la api
 
 function mostrarInfo() {
     let contenidoHTML = ``;
@@ -54,9 +54,9 @@ function mostrarInfo() {
     document.getElementById("informacion").innerHTML = contenidoHTML;
     let imagenesDelProducto = `   
     <div id="carouselExampleIndicators" class="carousel carousel-dark slide w-75" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    ${ botonesCarrusel(infoProductos.images)}
-  </div>
+        <div class="carousel-indicators">
+        ${botonesCarrusel(infoProductos.images)}
+        </div>
   <div class="carousel-inner">
     ${imagenesCarrusel(infoProductos.images)}
   </div>
@@ -70,42 +70,44 @@ function mostrarInfo() {
   </button>
 </div>
 `
-document.getElementById("carrusel").innerHTML = imagenesDelProducto ;
-agregarAlCarrito.setAttribute("id",infoProductos.id)
+    document.getElementById("carrusel").innerHTML = imagenesDelProducto;
+    agregarAlCarrito.setAttribute("id", infoProductos.id)
 }
 
+// funciones para el carrusel
 
-
-function botonesCarrusel(array){
-let botoncito = "" ;
-    for( let b = 0 ; b < array.length; b++){
-    if (b === 0){
-botoncito += `<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>`
-    } else { 
-        botoncito += `<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="${b}" aria-label="Slide ${b + 1}"></button>`
+function botonesCarrusel(array) {
+    let botoncito = "";
+    for (let b = 0; b < array.length; b++) {
+        if (b === 0) {
+            botoncito += `<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>`
+        } else {
+            botoncito += `<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="${b}" aria-label="Slide ${b + 1}"></button>`
+        }
     }
+    return botoncito
 }
-return botoncito
-}
-function imagenesCarrusel(array){
+function imagenesCarrusel(array) {
     let imgCarrusel = "";
-    for (let i = 0 ; i < array.length; i++){
+    for (let i = 0; i < array.length; i++) {
         let imagencita = array[i];
-        if (i === 0){
-            imgCarrusel += ` <div class="carousel-item active">
-            <img src="${imagencita}" class="d-block w-100" alt="Error">
-          </div> `
+        if (i === 0) {
+            imgCarrusel += ` 
+            <div class="carousel-item active">
+                <img src="${imagencita}" class="d-block w-100" alt="Error">
+            </div> `
         } else {
             imgCarrusel += `
             <div class="carousel-item">
-      <img src="${imagencita}" class="d-block w-100" alt="Error">
-    </div>
+                <img src="${imagencita}" class="d-block w-100" alt="Error">
+            </div>
             `
         }
     }
-   return imgCarrusel
+    return imgCarrusel
 }
 
+// Funcion para mostrar los comentarios que se encuentra en la api
 
 function mostarComentarios() {
     let contenido = "";
@@ -157,12 +159,13 @@ function mostarComentarios() {
 </div>
         
         `
-        
+
     }
     document.getElementById("comentarios").innerHTML += contenido;
 
 }
 
+// funcion que agrega un nuevo comentario
 
 function agregarComentario() {
     let lista = document.getElementById("comentarios")
@@ -228,7 +231,7 @@ function agregarComentario() {
 
 }
 
-
+// evento click para agregar un comentario
 
 boton.addEventListener("click", () => {
     if (comment.value != "" && puntuacion.value != 0) {
@@ -243,23 +246,25 @@ boton.addEventListener("click", () => {
     }
 });
 
-function productosRelacionados(){
+// funcion para los productos relacionados
+
+function productosRelacionados() {
     let relatedProduct = "";
     for (let r = 0; r < infoProductos.relatedProducts.length; r++) {
         let otherProduct = infoProductos.relatedProducts[r];
-    relatedProduct += `
+        relatedProduct += `
     <div class="col-md-4">
             <div class="card mb-4 shadow-sm custom-card cursor-active">
-              <img class="bd-placeholder-img card-img-top" src="`+ otherProduct.image +`"
+                <img class="bd-placeholder-img card-img-top" src="`+ otherProduct.image + `"
                 alt="Imgagen representativa">
-              <h3 class="m-3">`+ otherProduct.name +`</h3>
-              <div class="card-body">
-                <p class="card-text">Por mas informacion del producto
-                    <a  onclick="localStorage.setItem('productID', ` + otherProduct.id +` )" href="product-info.html">Clickea Aqui</a>
-                </p>
-              </div>
+                <h3 class="m-3">`+ otherProduct.name + `</h3>
+                <div class="card-body">
+                    <p class="card-text">Por mas informacion del producto
+                    <a  onclick="localStorage.setItem('productID', ` + otherProduct.id + ` )" href="product-info.html">Clickea Aqui</a>
+                    </p>
+                </div>
             </div>
-          </div>
+    </div>
     `
     }
     document.getElementById("otrosProductos").innerHTML += relatedProduct;

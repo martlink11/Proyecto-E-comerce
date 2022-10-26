@@ -61,7 +61,45 @@
   </nav>
   <main>
     <div class="container">
-      
+     <!-- Button trigger modal -->
+<button type="button" class="btn btn-link ps-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Seleccionar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Forma de Pago</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="radio" name="metodoPago"> <label for="metodoPago">Tarjeta de Credito</label>
+        <hr>
+        <div class="row">
+          <div class="row">
+            <div class="col"><p>Numero de Tarjeta</p></div>
+            <div class="col"><p>Codigo de Seguridad</p></div>
+          </div>
+          <div class="col"><input type="number"></div>
+          <div class="col"><input type="number"></div>
+        </div>
+        <div class="row mt-4">
+          <p>Vencimiento(MM/AA)</p>
+          <div class="col"><input type="date" id="FechaVencimiento"></div>
+        </div>
+        <hr>
+        <input type="radio" name="metodoPago"> <label for="metodoPago">Transferencia Bancaria</label>
+        <hr>
+        <input type="number" name="" id="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Listo</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   </main>
   <footer class="text-muted">

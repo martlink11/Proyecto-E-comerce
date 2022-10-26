@@ -34,7 +34,8 @@
         </ul>
       </div>
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="perfil" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="perfil" data-bs-toggle="dropdown"
+          aria-expanded="false">
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
           <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
@@ -47,9 +48,9 @@
   <main>
     <div class="container">
       <div id="cart-title">
-      <h3>Articulos a Comprar</h3>
-    </div>
-    <div class="row" id="cart-header">
+        <h3>Articulos a Comprar</h3>
+      </div>
+      <div class="row" id="cart-header">
         <div class="col-2">
 
         </div>
@@ -65,47 +66,139 @@
         <div class="col-2">
           <h5>Subtotal</h5>
         </div>
-    </div>
-    <hr>
-    <div id="cart-container">
+      </div>
+      <hr>
+      <div id="cart-container">
 
-    </div>
-    
-    <hr>
-    <div id="cart-form">
-      <h5>Tipo de Envio</h5>
-      <form action="get">
-        <div class="tipo-de-envio">
-          <input type="radio" name="envio" id="">
-          <label for="envio">Premium de 2 a 5 dias(%15)</label>
-        </div>
-        <div class="tipo-de-envio">
-          <input type="radio" name="envio" id="">
-          <label for="envio">Express 5 a 8 dias(%7)</label>
-        </div>
-        <div class="tipo-de-envio">
-          <input type="radio" name="envio" id="">
-          <label for="envio">Standar de 12 a 15 dias(%5)</label>
-        </div>
-        <h5>Direccion de Envio</h5>
-        <div class="row align-items-start">
-          <div class="col-3">
-            <p>Calle</p>
-            <input type="text">
+      </div>
+
+      <hr>
+      <div id="cart-form">
+        <h3 class="mt-5">Tipo de Envio</h3>
+        <form action="get" class="needs-validation" novalidate>
+          <div class="tipo-de-envio">
+            <input type="radio" name="envio" id="envio-premium">
+            <label for="envio">Premium de 2 a 5 dias(%15)</label>
           </div>
-          <div class="col-2">
-            <p>Numero
-            </p>
-            <input type="number">
+          <div class="tipo-de-envio">
+            <input type="radio" name="envio" id="envio-express">
+            <label for="envio">Express 5 a 8 dias(%7)</label>
           </div>
-          <div class="row-4">
-            <p>Esquina</p>
-            <input type="text">
+          <div class="tipo-de-envio">
+            <input type="radio" name="envio" id="envio-standar">
+            <label for="envio">Standar de 12 a 15 dias(%5)</label>
           </div>
-          
-        </div>
-      </form>
-    </div>
+          <h3 class="mt-5">Direccion de Envio</h3>
+          <div class="row align-items-start">
+            <div class="col-3">
+              <p>Calle</p>
+              <input type="text" id="Calle" class="form-control" requiered>
+              <div class="invalid-feedback">
+                Debe ingresar su calle
+              </div>
+            </div>
+            <div class="col-2">
+              <p>Numero
+              </p>
+              <input type="number" id="Num-calle" class="form-control" requiered>
+              <div class="invalid-feedback">
+                Debe ingresar su numero de puerta
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <p>Esquina</p>
+                <input type="text" id="Esquina" class="form-control" requiered>
+                <div class="invalid-feedback">
+                  Debe ingresar su esquina
+                </div>
+              </div>
+            </div>
+            <div>
+
+            </div>
+          </div>
+          <h3 class="mt-5">Costos</h3>
+          <div id="Costos-totales">
+
+          </div>
+          <hr>
+
+
+          <div id="Metodo-de-pago">
+            <h3 class="mt-5">Metodo de Pago</h3>
+            <!-- Button trigger modal -->
+            <div class="row">
+              <div class="col-sm-2">
+                <p id="pago">Debe seleccionar un metodo de pago</p>
+              </div>
+              <div class="col-sm-10">
+                <button type="button" class="btn btn-link ps-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  Seleccionar
+                </button>
+
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Forma de Pago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <input type="radio" name="metodoPago" id="TarjetaCredito"> <label for="metodoPago">Tarjeta de
+                      Credito</label>
+                    <hr>
+                    <div class="row">
+                      <div class="row">
+                        <div class="col">
+                          <p>Numero de Tarjeta</p>
+                        </div>
+                        <div class="col">
+                          <p>Codigo de Seguridad</p>
+                        </div>
+                      </div>
+                      <div class="col"><input type="number" id="Num-tarjeta"></div>
+                      <div class="invalid-feedback">
+                        Debe ingresar su Tarjeta
+                      </div>
+                      <div class="col"><input type="number" id="Cod-Seg"></div>
+                      <div class="invalid-feedback">
+                        Debe ingresar su Codigo
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <p>Vencimiento(MM/AA)</p>
+                      <div class="col"><input type="date" id="FechaVencimiento"></div>
+                      <div class="invalid-feedback">
+                        Debe ingresar una fecha
+                      </div>
+                    </div>
+                    <hr>
+                    <input type="radio" name="metodoPago" id="CuentaBancaria"> <label for="metodoPago">Transferencia
+                      Bancaria</label>
+                    <hr>
+                    <input type="number" name="metodoPago" id="NumCuenta">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                      id="btnParaPago">Listo</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button id="finalizar-compra" class="btn btn-primary m-4 w-50">Finalizar Compra</button>
+
+
+
+        </form>
+      </div>
     </div>
   </main>
   <footer class="text-muted">
@@ -129,22 +222,57 @@
   <template id="template-carrito">
     <div class="row align-items-start">
       <div class="col-2">
-          <img src="" style="width: 150px;">
+        <img src="" style="width: 150px;">
       </div>
       <div class="col-2">
-          <p class="name"></p>
+        <p class="name"></p>
       </div>
       <div class="col-2">
-       <label> <p id="precio"></p></label>
+        <label>
+          <p id="precio"></p>
+        </label>
       </div>
       <div class="col-2">
-          <button class="btn btn-danger m-1" id="restar">-</button><input type="number" value="" min="1" id="cantidad" style="width:40px" oninput=""> <button id="sumar" class="btn btn-success">+</button>
+        <button class="btn btn-danger m-1" id="restar">-</button><input type="number" value="" min="1" id="cantidad"
+          style="width:40px" oninput=""> <button id="sumar" class="btn btn-success">+</button>
       </div>
       <div class="col-2">
-          <b id="subtotal" ></b>
-      </div>   
-  </div>
-  
+        <b id="subtotal"></b>
+      </div>
+    </div>
+
+  </template>
+  <template id="template-costos">
+    <div class="list-group-item list-group-item-action">
+      <div class="col">
+        <div class="d-flex w-75 justify-content-between">
+          <b>Subtotal</b>
+          <label id="costo-subtotal">15000</label>
+        </div>
+        <div>
+          <p>Costo unitario del producto por cantidad</p>
+        </div>
+      </div>
+    </div>
+    <div class="list-group-item list-group-item-action">
+      <div class="col">
+        <div class="d-flex w-75 justify-content-between">
+          <b>Costo de Envio</b>
+          <label id="costo-envio">15000</label>
+        </div>
+        <div>
+          <p>Segun Tipo de Envio</p>
+        </div>
+      </div>
+    </div>
+    <div class="list-group-item list-group-item-action">
+      <div class="col">
+        <div class="d-flex w-75 justify-content-between">
+          <b>Total($)</b>
+          <b id="suma-total">15000</b>
+        </div>
+      </div>
+    </div>
   </template>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
