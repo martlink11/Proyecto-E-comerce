@@ -103,7 +103,7 @@ const objetos = InfoCarrito => {
 const costos = InfoCarrito => {
     InfoCarrito.forEach(element => {
         templateCostos.querySelector('#costo-subtotal').innerText = element.currency + " " + element.unitCost
-        templateCostos.querySelector('#costo-envio').innerText = element.currency + " " + element.unitCost
+        templateCostos.querySelector('#costo-envio').innerText = "Seleccione metodo de envio"
         templateCostos.querySelector('#suma-total').innerText = element.currency + " " + element.unitCost
 
 
