@@ -206,5 +206,3 @@ TransfCuenta.addEventListener('click', () => {
     txtPago.textContent = "Pago con transferencia bancaria"
 })
 
-
-

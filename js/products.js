@@ -7,7 +7,7 @@ let cantidadMinima = undefined;
 let cantidadMaxima = undefined;
 
 
-
+// Funcion para guardar el ID del producto en local storage
 function setProductID(id) {
     localStorage.setItem("productID", id);
     window.location = "product-info.html"
@@ -15,7 +15,7 @@ function setProductID(id) {
 
 let arregloProductos = [];
     
-    
+// funcion para mostrar los productos que se encuentran en la API    
     function mostrarProductos(array){
         let htmlContentToAppend = "" ;
 
@@ -34,8 +34,8 @@ let arregloProductos = [];
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <div class="mb-1">
-                            <h4>`+ productos.name +`  - USD `+ productos.cost+ `</h4> 
-                            <p> `+ productos.description +`</p> 
+                                <h4>`+ productos.name +`  - USD `+ productos.cost+ `</h4> 
+                                <p> `+ productos.description +`</p> 
                             </div>
                             <small class="text-muted">` + productos.soldCount + ` Vendidos</small> 
                         </div>
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
 
-
+// funcion para ordenar los productos por criterio
 function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)

@@ -24,18 +24,26 @@
           id="imgLog">
         <h1>Iniciar Sesion</h1>
 
-        <div>
-          <input type="email" id="email" placeholder="Email"> <br>
-
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4 m-3">
+            <input type="email" id="email" placeholder="Email" class="form-control">
+          </div>
         </div>
 
-        <div>
-          <input type="password" id="contraseña" placeholder="Contraseña"> <br>
-
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4 m-3">
+            <input type="password" id="contraseña" placeholder="Contraseña" class="form-control">
+          </div>
         </div>
 
         <button id="ingreso">Ingresar</button>
       </form>
+      <div class="m-4">
+        <label for="registro">No tengo cuenta   </label> <a href="registro.html">Registrarme</a>
+      </div>
+      
     </div>
   </main>
 
@@ -50,6 +58,7 @@
     </div>
   </footer>
   <script src="js/login.js"></script>
+  <script src="js/init.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

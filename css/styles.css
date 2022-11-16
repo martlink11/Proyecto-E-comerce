@@ -193,15 +193,7 @@ a.custom-card:hover {
   text-align: center;
   margin-top: 100px;
 }
-#email {
-  margin: 30px;
-  border-radius: 5px;
-}
 
-#contraseña {
-  margin-bottom: 25px;
-  border-radius: 5px;
-} 
 
 #ingreso {
   background-color: rgba(34,159,188,255);
@@ -268,4 +260,8 @@ a.custom-card:hover {
 }
 .tipo-de-envio{
   margin: 20px;
+}
+
+#imgPerfil {
+  width: 100px;
 }

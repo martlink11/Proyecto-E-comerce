@@ -16,6 +16,7 @@ let hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
+// funcion para hacer el fetch
 let getJSONData = function(url){
     let result = {};
     showSpinner();
@@ -41,14 +42,14 @@ let getJSONData = function(url){
     });
 }
 
-
+// funcion la cual verifica si estas logueado o no , en caso de no estarlo, esta te redirige al login
 document.addEventListener("DOMContentLoaded", function(){
-  if (localStorage.getItem("login") === null) {
+  if (localStorage.getItem("login") === null ) {
       Swal.fire({
           icon:'warning',
           title:'Debe Loguearse',
           timer:1500})
-          setTimeout(" window.location.href = 'login.html'",2000);
+          setTimeout(" window.location.href = 'login.html'",10000);
   } else {
       document.getElementById("perfil").innerHTML = localStorage.getItem("login");
 }
@@ -57,6 +58,9 @@ document.addEventListener("DOMContentLoaded", function(){
   })
 
 });
+
+
+// En desarrollo :)
 const agregarAlCarrito = document.getElementById("botonCarrito")
 const containerBtnCart = document.getElementById("containerDelBotonCarrito")
 const agregarCart = e => {
